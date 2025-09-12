@@ -260,6 +260,85 @@ const docTemplate = `{
                 }
             }
         },
+        "/api/v1/feedbacks": {
+            "get": {
+                "description": "Get feedback resource",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feedbacks"
+                ],
+                "summary": "Get feedbacks submitted by users",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page number for pagination",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Number of items per page",
+                        "name": "per_page",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "post": {
+                "description": "Create feedback resource",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "feedbacks"
+                ],
+                "summary": "Create Feedback given by user",
+                "parameters": [
+                    {
+                        "description": "Create feedback",
+                        "name": "feedback",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Feedback"
+                        }
+                    },
+                    {
+                        "type": "string",
+                        "default": "Bearer \u003cAdd access token here\u003e",
+                        "description": "Insert your access token",
+                        "name": "Authorization",
+                        "in": "header",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
         "/api/v1/groups": {
             "get": {
                 "description": "Get all groups",
@@ -388,7 +467,7 @@ const docTemplate = `{
                     },
                     {
                         "type": "string",
-                        "description": "quota-id to be fetched",
+                        "description": "group-id to be fetched",
                         "name": "id",
                         "in": "path",
                         "required": true
@@ -1229,6 +1308,27 @@ const docTemplate = `{
                 }
             }
         },
+        "models.Feedback": {
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "type": "string"
+                },
+                "created_at": {
+                    "description": "CreatedAt is the time the event was created",
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "rating": {
+                    "$ref": "#/definitions/models.Rating"
+                },
+                "user_id": {
+                    "type": "string"
+                }
+            }
+        },
         "models.Key": {
             "type": "object",
             "properties": {
@@ -1259,6 +1359,19 @@ const docTemplate = `{
                     "type": "string"
                 }
             }
+        },
+        "models.Rating": {
+            "type": "string",
+            "enum": [
+                "positive",
+                "negative",
+                "neutral"
+            ],
+            "x-enum-varnames": [
+                "Positive",
+                "Negative",
+                "Neutral"
+            ]
         },
         "models.Service": {
             "type": "object",

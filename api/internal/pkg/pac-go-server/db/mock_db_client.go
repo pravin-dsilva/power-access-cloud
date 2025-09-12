@@ -5,6 +5,7 @@
 package db
 
 import (
+	"context"
 	reflect "reflect"
 
 	models "github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
@@ -46,6 +47,21 @@ func (m *MockDB) AcceptTermsAndConditions(arg0 *models.TermsAndConditions) error
 func (mr *MockDBMockRecorder) AcceptTermsAndConditions(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "AcceptTermsAndConditions", reflect.TypeOf((*MockDB)(nil).AcceptTermsAndConditions), arg0)
+}
+
+// CollectionExists mocks base method.
+func (m *MockDB) CollectionExists(arg0 string) (bool, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CollectionExists", arg0)
+	ret0, _ := ret[0].(bool)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CollectionExists indicates an expected call of CollectionExists.
+func (mr *MockDBMockRecorder) CollectionExists(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CollectionExists", reflect.TypeOf((*MockDB)(nil).CollectionExists), arg0)
 }
 
 // Connect mocks base method.
@@ -179,18 +195,19 @@ func (mr *MockDBMockRecorder) GetEventsByUserID(arg0, arg1, arg2 interface{}) *g
 }
 
 // GetFeedbacks mocks base method.
-func (m *MockDB) GetFeedbacks(arg0 models.FeedbacksFilter) ([]models.Feedback, error) {
+func (m *MockDB) GetFeedbacks(arg0 models.FeedbacksFilter, arg1, arg2 int64) ([]models.Feedback, int64, error) {
 	m.ctrl.T.Helper()
-	ret := m.ctrl.Call(m, "GetFeedbacks", arg0)
+	ret := m.ctrl.Call(m, "GetFeedbacks", arg0, arg1, arg2)
 	ret0, _ := ret[0].([]models.Feedback)
-	ret1, _ := ret[1].(error)
-	return ret0, ret1
+	ret1, _ := ret[1].(int64)
+	ret2, _ := ret[2].(error)
+	return ret0, ret1, ret2
 }
 
 // GetFeedbacks indicates an expected call of GetFeedbacks.
-func (mr *MockDBMockRecorder) GetFeedbacks(arg0 interface{}) *gomock.Call {
+func (mr *MockDBMockRecorder) GetFeedbacks(arg0, arg1, arg2 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
-	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFeedbacks", reflect.TypeOf((*MockDB)(nil).GetFeedbacks), arg0)
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "GetFeedbacks", reflect.TypeOf((*MockDB)(nil).GetFeedbacks), arg0, arg1, arg2)
 }
 
 // GetGroupsQuota mocks base method.
@@ -342,6 +359,21 @@ func (mr *MockDBMockRecorder) InsertFeedback(arg0 interface{}) *gomock.Call {
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "InsertFeedback", reflect.TypeOf((*MockDB)(nil).InsertFeedback), arg0)
 }
 
+// FeedbackAllowed mocks base method.
+func (m *MockDB) FeedbackAllowed(arg0 context.Context, arg1 string) (bool, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "FeedbackAllowed", arg0, arg1)
+	ret0, _ := ret[0].(bool)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// FeedbackAllowed indicates an expected call of FeedbackAllowed.
+func (mr *MockDBMockRecorder) FeedbackAllowed(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "FeedbackAllowed", reflect.TypeOf((*MockDB)(nil).FeedbackAllowed), arg0, arg1)
+}
+
 // MarkEventAsNotified mocks base method.
 func (m *MockDB) MarkEventAsNotified(arg0 string) error {
 	m.ctrl.T.Helper()
@@ -397,6 +429,20 @@ func (m *MockDB) NewRequest(arg0 *models.Request) (string, error) {
 func (mr *MockDBMockRecorder) NewRequest(arg0 interface{}) *gomock.Call {
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "NewRequest", reflect.TypeOf((*MockDB)(nil).NewRequest), arg0)
+}
+
+// SetEventCapping mocks base method.
+func (m *MockDB) SetEventCapping(arg0 int64) error {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "SetEventCapping", arg0)
+	ret0, _ := ret[0].(error)
+	return ret0
+}
+
+// SetEventCapping indicates an expected call of SetEventCapping.
+func (mr *MockDBMockRecorder) SetEventCapping(arg0 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetEventCapping", reflect.TypeOf((*MockDB)(nil).SetEventCapping), arg0)
 }
 
 // UpdateQuota mocks base method.

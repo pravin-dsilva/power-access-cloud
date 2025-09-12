@@ -1,6 +1,8 @@
 package db
 
 import (
+	"context"
+
 	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
 )
 
@@ -8,6 +10,7 @@ import (
 type DB interface {
 	Connect() error
 	Disconnect() error
+	CollectionExists(name string) (bool, error)
 
 	GetRequestsByUserID(id, requestType string) ([]models.Request, error)
 	NewRequest(request *models.Request) (string, error)
@@ -35,11 +38,13 @@ type DB interface {
 	GetEventsByType(models.EventType, uint) ([]models.Event, int64, error)
 	WatchEvents(chan<- *models.Event) error
 	MarkEventAsNotified(string) error
+	SetEventCapping(int64) error
 
 	AcceptTermsAndConditions(*models.TermsAndConditions) error
 	GetTermsAndConditionsByUserID(string) (*models.TermsAndConditions, error)
 	DeleteTermsAndConditionsByUserID(string) error
 
 	InsertFeedback(*models.Feedback) error
-	GetFeedbacks(models.FeedbacksFilter) ([]models.Feedback, error)
+	GetFeedbacks(models.FeedbacksFilter, int64, int64) ([]models.Feedback, int64, error)
+	FeedbackAllowed(context.Context, string) (bool, error)
 }

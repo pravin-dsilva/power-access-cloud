@@ -36,6 +36,20 @@ definitions:
       ready:
         type: boolean
     type: object
+  models.Feedback:
+    properties:
+      comment:
+        type: string
+      created_at:
+        description: CreatedAt is the time the event was created
+        type: string
+      id:
+        type: string
+      rating:
+        $ref: '#/definitions/models.Rating'
+      user_id:
+        type: string
+    type: object
   models.Key:
     properties:
       content:
@@ -56,6 +70,16 @@ definitions:
       id:
         type: string
     type: object
+  models.Rating:
+    enum:
+    - positive
+    - negative
+    - neutral
+    type: string
+    x-enum-varnames:
+    - Positive
+    - Negative
+    - Neutral
   models.Service:
     properties:
       catalog_name:
@@ -268,6 +292,59 @@ paths:
       summary: Get events
       tags:
       - events
+  /api/v1/feedbacks:
+    get:
+      consumes:
+      - application/json
+      description: Get feedback resource
+      parameters:
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Page number for pagination
+        in: query
+        name: page
+        type: integer
+      - description: Number of items per page
+        in: query
+        name: per_page
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Get feedbacks submitted by users
+      tags:
+      - feedbacks
+    post:
+      consumes:
+      - application/json
+      description: Create feedback resource
+      parameters:
+      - description: Create feedback
+        in: body
+        name: feedback
+        required: true
+        schema:
+          $ref: '#/definitions/models.Feedback'
+      - default: Bearer <Add access token here>
+        description: Insert your access token
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Create Feedback given by user
+      tags:
+      - feedbacks
   /api/v1/groups:
     get:
       consumes:

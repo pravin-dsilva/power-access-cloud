@@ -89,6 +89,8 @@ func CreateRouter() *gin.Engine {
 
 		authorizedAdmin.GET("/users", services.GetUsers)
 		authorizedAdmin.GET("/users/:id", services.GetUser)
+
+		authorizedAdmin.GET("/feedbacks", services.GetFeedback)
 	}
 
 	// user related endpoints
@@ -115,6 +117,9 @@ func CreateRouter() *gin.Engine {
 	// terms and conditions related endpoints
 	authorized.GET("/tnc", services.GetTermsAndConditionsStatus)
 	authorized.POST("/tnc", services.AcceptTermsAndConditions)
+
+	// feedback related endpoints
+	authorized.POST("/feedbacks", services.CreateFeedback)
 
 	return router
 }
