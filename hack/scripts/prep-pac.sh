@@ -99,3 +99,23 @@ EOF
 chmod 644 "$UPGRADE_WARN_SCRIPT"
 echo -e "INFO: Installed patch-warning script into $UPGRADE_WARN_SCRIPT\n"
 
+
+# ------------------------------------------------------------------------------
+# Terms & Conditions MOTD
+# ------------------------------------------------------------------------------
+
+TNC_LINK="https://github.com/PDeXchange/pac-support/blob/main/Terms%20and%20Conditions.md"
+
+cat > /etc/motd <<"EOF"
+********************************************************************************
+NOTICE TO USERS
+
+By signing into the service instance, you agree to the Terms & Conditions of system usage.
+
+Read the complete Terms and Conditions here:
+    ${TNC_LINK}
+
+********************************************************************************
+EOF
+
+echo "INFO: T&C MOTD notice has been set with link: ${TNC_LINK}"
