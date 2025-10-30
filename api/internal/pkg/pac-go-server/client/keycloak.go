@@ -5,6 +5,7 @@ import (
 	"errors"
 
 	"github.com/Nerzal/gocloak/v13"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/keycloak"
 )
 
 var (
@@ -23,16 +24,18 @@ type KeyCloakConfig struct {
 
 // KeycloakClient implements KeyCloakInterface
 type KeyCloakClient struct {
-	ctx    context.Context
-	config KeyCloakConfig
-	client *gocloak.GoCloak
+	ctx                    context.Context
+	config                 KeyCloakConfig
+	client                 *gocloak.GoCloak
+	internalKeyCloakClient *keycloak.GoCloak
 }
 
 var NewKeyCloakClient = func(config KeyCloakConfig, ctx context.Context) Keycloak {
 	return &KeyCloakClient{
-		ctx:    ctx,
-		config: config,
-		client: gocloak.NewClient(config.Hostname),
+		ctx:                    ctx,
+		config:                 config,
+		client:                 gocloak.NewClient(config.Hostname),
+		internalKeyCloakClient: keycloak.NewGoCloakClient(config.Hostname),
 	}
 }
 
@@ -47,7 +50,7 @@ func (k *KeyCloakClient) GetUsers() ([]*gocloak.User, error) {
 
 // GetUsers for listing all the users from keycloak
 func (k *KeyCloakClient) GetUser(id string) (*gocloak.User, error) {
-	return k.client.GetUser(k.ctx, k.config.AccessToken, k.config.Realm, id)
+	return k.internalKeyCloakClient.GetUser(k.ctx, k.config.AccessToken, k.config.Realm, id)
 }
 
 func (k *KeyCloakClient) GetGroups() ([]*gocloak.Group, error) {

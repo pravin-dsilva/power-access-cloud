@@ -1,6 +1,6 @@
 package main
 
-import _ "github.com/PDeXchange/pac/docs"
+import _ "github.ibm.com/pac/power-access-cloud/api/docs"
 
 // @title Pac-go-server APIs
 // @description Go-server for PAC backend apis in gin

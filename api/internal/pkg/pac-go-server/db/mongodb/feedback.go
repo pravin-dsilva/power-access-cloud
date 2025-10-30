@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/services"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/services"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )

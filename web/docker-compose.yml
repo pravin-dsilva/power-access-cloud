@@ -51,7 +51,7 @@ services:
     volumes:
       - .:/app
   backend:
-    image: ghcr.io/pdexchange/pac-go-server:main
+    image: icr.io/power-access-cloud/pac-go-server:main
     ports:
       - "8000:8000"
     environment:

@@ -66,7 +66,7 @@ const QuickLinks = () => {
           <br />
           <Link size="20" />{" "}
           <a
-            href="https://github.com/PDeXchange/pac-support/blob/main/docs/FAQ.md"
+            href="https://github.ibm.com/pac/power-access-cloud/blob/main/support/docs/FAQ.md"
             target="_blank"
             rel="noopener noreferrer"
           >

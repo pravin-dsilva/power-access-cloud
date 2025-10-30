@@ -7,8 +7,8 @@ import (
 
 	"github.com/Nerzal/gocloak/v13"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/client"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
 )
 
 func getGroups(context context.Context) ([]*gocloak.Group, error) {

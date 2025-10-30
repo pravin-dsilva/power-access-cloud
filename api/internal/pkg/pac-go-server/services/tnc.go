@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
 	"github.com/gin-gonic/gin"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
 	"go.mongodb.org/mongo-driver/mongo"
 )
 

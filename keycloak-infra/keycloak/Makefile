@@ -1,7 +1,7 @@
 KEYCLOCK_IMAGE_NAME := quay.io/keycloak/keycloak
 KEYCLOCK_IMAGE_TAG := $(shell cat KEYCLOAK_VERSION)
 KEYCLOCK_IMAGE := $(KEYCLOCK_IMAGE_NAME):$(KEYCLOCK_IMAGE_TAG)
-REGISTRY := ghcr.io/pdexchange
+REGISTRY := icr.io/power-access-cloud
 IMG := keycloak
 VERSION ?= dev
 

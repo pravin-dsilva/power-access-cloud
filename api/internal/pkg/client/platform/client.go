@@ -2,12 +2,13 @@ package platform
 
 import (
 	"context"
+
 	"github.com/pkg/errors"
 
 	"github.com/IBM/platform-services-go-sdk/iamidentityv1"
 	"github.com/IBM/platform-services-go-sdk/resourcecontrollerv2"
 
-	"github.com/PDeXchange/pac/internal/pkg/client/iam"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/iam"
 )
 
 type Client struct {

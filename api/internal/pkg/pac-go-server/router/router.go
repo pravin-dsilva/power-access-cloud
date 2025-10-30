@@ -11,21 +11,24 @@ import (
 
 	"github.com/tbaehler/gin-keycloak/pkg/ginkeycloak"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/services"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/keycloak"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/services"
 
 	_ "github.com/joho/godotenv/autoload"
 )
 
 var (
-	clientId     = os.Getenv("KEYCLOAK_CLIENT_ID")
-	clientSecret = os.Getenv("KEYCLOAK_CLIENT_SECRET")
-	realm        = os.Getenv("KEYCLOAK_REALM")
-	hostname     = os.Getenv("KEYCLOAK_HOSTNAME")
-	client       *gocloak.GoCloak
+	clientId       = os.Getenv("KEYCLOAK_CLIENT_ID")
+	clientSecret   = os.Getenv("KEYCLOAK_CLIENT_SECRET")
+	realm          = os.Getenv("KEYCLOAK_REALM")
+	hostname       = os.Getenv("KEYCLOAK_HOSTNAME")
+	client         *gocloak.GoCloak
+	internalClient *keycloak.GoCloak
 )
 
 func init() {
 	client = gocloak.NewClient(hostname)
+	internalClient = keycloak.NewGoCloakClient(hostname)
 }
 
 func CreateRouter() *gin.Engine {
