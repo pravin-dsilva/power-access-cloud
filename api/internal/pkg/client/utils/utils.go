@@ -3,9 +3,10 @@ package utils
 import (
 	"context"
 	"fmt"
+
 	"github.com/IBM/go-sdk-core/v5/core"
 	"github.com/IBM/platform-services-go-sdk/iamidentityv1"
-	"github.com/PDeXchange/pac/internal/pkg/client/platform"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/platform"
 )
 
 // GetAccountID returns IBM cloud account ID of API key used.

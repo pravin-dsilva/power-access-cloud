@@ -11,7 +11,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/db"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/db"
 )
 
 var (

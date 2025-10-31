@@ -31,9 +31,9 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
 
-	appv1alpha1 "github.com/PDeXchange/pac/apis/app/v1alpha1"
-	"github.com/PDeXchange/pac/controllers/app/scope"
-	appservice "github.com/PDeXchange/pac/controllers/app/service"
+	appv1alpha1 "github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	"github.ibm.com/pac/power-access-cloud/api/controllers/app/scope"
+	appservice "github.ibm.com/pac/power-access-cloud/api/controllers/app/service"
 )
 
 // ServiceReconciler reconciles a Service object

@@ -6,10 +6,10 @@ import (
 
 	"go.uber.org/zap"
 
-	"github.com/PDeXchange/pac/internal/pkg/notifier/client/mail"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/db/mongodb"
-	log "github.com/PDeXchange/pac/internal/pkg/pac-go-server/logger"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/services"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/notifier/client/mail"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/db/mongodb"
+	log "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/logger"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/services"
 )
 
 var (

@@ -8,9 +8,9 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	pacClient "github.com/PDeXchange/pac/internal/pkg/pac-go-server/client"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/utils"
+	pacClient "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 )
 
 func AllowAdminOnly(c *gin.Context) {
@@ -65,7 +65,7 @@ func RetrospectKeycloakToken(c *gin.Context) {
 
 	// Get groups of a user and append them to the context
 	{
-		groups, err := client.GetAccountGroups(c.Request.Context(), accessToken, realm)
+		groups, err := internalClient.GetAccountGroups(c.Request.Context(), accessToken, realm)
 		if err != nil {
 			c.AbortWithStatusJSON(http.StatusBadRequest, gin.H{"error": fmt.Sprintf("failed to get groups of a user: %s", err.Error())})
 			return

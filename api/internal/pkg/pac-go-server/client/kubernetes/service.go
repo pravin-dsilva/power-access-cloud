@@ -10,8 +10,8 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	kClient "sigs.k8s.io/controller-runtime/pkg/client"
 
-	pac "github.com/PDeXchange/pac/apis/app/v1alpha1"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/utils"
+	pac "github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 )
 
 func (client KubeClient) GetServices(userId string) (pac.ServiceList, error) {

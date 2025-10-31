@@ -13,13 +13,13 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	utilrand "k8s.io/apimachinery/pkg/util/rand"
 
-	pac "github.com/PDeXchange/pac/apis/app/v1alpha1"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/client"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/client/kubernetes"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/db"
-	log "github.com/PDeXchange/pac/internal/pkg/pac-go-server/logger"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/utils"
+	pac "github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client/kubernetes"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/db"
+	log "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/logger"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 )
 
 const maxServiceNameLength = 50

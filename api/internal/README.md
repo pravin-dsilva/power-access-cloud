@@ -29,8 +29,8 @@ This guide provides step-by-step instructions for setting up and running the IBM
 1. Clone Repository
 
     ```
-    git clone https://github.com/PDeXchange/pac.git
-    cd pac
+    git clone https://github.ibm.com/pac/power-access-cloud/api.git
+    cd power-access-cloud
     ```
 
 2. Set Up Kubernetes Cluster
@@ -67,8 +67,8 @@ This guide provides step-by-step instructions for setting up and running the IBM
 1. Clone Repository
 
     ```
-    git clone https://github.com/PDeXchange/pac-ui.git
-    cd pac
+    git clone https://github.ibm.com/pac/power-access-cloud.git
+    cd power-access-cloud
     ```
 
 2. Configure Environment Variables

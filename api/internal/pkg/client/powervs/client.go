@@ -8,8 +8,8 @@ import (
 	"github.com/IBM-Cloud/power-go-client/clients/instance"
 	"github.com/IBM-Cloud/power-go-client/ibmpisession"
 	"github.com/IBM-Cloud/power-go-client/power/models"
-	"github.com/PDeXchange/pac/internal/pkg/client/iam"
-	"github.com/PDeXchange/pac/internal/pkg/client/utils"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/iam"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/utils"
 )
 
 var _ PowerVS = &Client{}

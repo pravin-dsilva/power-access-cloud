@@ -1,10 +1,8 @@
-module github.com/PDeXchange/pac
+module github.ibm.com/pac/power-access-cloud/api
 
 go 1.24.0
 
 toolchain go1.24.1
-
-replace github.com/Nerzal/gocloak/v13 => github.com/PDeXchange/gocloak/v13 v13.9.0-1
 
 require (
 	github.com/IBM-Cloud/power-go-client v1.13.0
@@ -15,6 +13,7 @@ require (
 	github.com/gin-gonic/gin v1.11.0
 	github.com/go-logr/logr v1.4.3
 	github.com/go-playground/validator/v10 v10.28.0
+	github.com/go-resty/resty/v2 v2.16.5
 	github.com/golang/mock v1.6.0
 	github.com/joho/godotenv v1.5.1
 	github.com/onsi/ginkgo/v2 v2.26.0
@@ -72,7 +71,6 @@ require (
 	github.com/go-openapi/validate v0.24.0 // indirect
 	github.com/go-playground/locales v0.14.1 // indirect
 	github.com/go-playground/universal-translator v0.18.1 // indirect
-	github.com/go-resty/resty/v2 v2.16.5 // indirect
 	github.com/go-task/slim-sprig/v3 v3.0.0 // indirect
 	github.com/gobuffalo/flect v1.0.2 // indirect
 	github.com/goccy/go-json v0.10.5 // indirect

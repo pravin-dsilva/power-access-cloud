@@ -6,12 +6,12 @@ import (
 	flag "github.com/spf13/pflag"
 	"go.uber.org/zap"
 
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/client/kubernetes"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/db/mongodb"
-	log "github.com/PDeXchange/pac/internal/pkg/pac-go-server/logger"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/router"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/services"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client/kubernetes"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/db/mongodb"
+	log "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/logger"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/router"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/services"
 
 	_ "github.com/joho/godotenv/autoload"
 )

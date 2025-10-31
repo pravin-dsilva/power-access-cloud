@@ -11,10 +11,10 @@ import (
 
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 
-	pac "github.com/PDeXchange/pac/apis/app/v1alpha1"
-	log "github.com/PDeXchange/pac/internal/pkg/pac-go-server/logger"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/utils"
+	pac "github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	log "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/logger"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 )
 
 // GetAllCatalogs	godoc

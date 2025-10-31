@@ -19,17 +19,17 @@ package scope
 import (
 	"context"
 
-	"github.com/PDeXchange/pac/apis/app/v1alpha1"
-	"github.com/PDeXchange/pac/controllers/util"
-	"github.com/PDeXchange/pac/internal/pkg/client/platform"
 	"github.com/go-logr/logr"
 	"github.com/pkg/errors"
+	"github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	"github.ibm.com/pac/power-access-cloud/api/controllers/util"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/platform"
 
 	"github.com/IBM/go-sdk-core/v5/core"
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	"github.com/PDeXchange/pac/internal/pkg/client/powervs"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/powervs"
 )
 
 type ControllerScopeParams struct {

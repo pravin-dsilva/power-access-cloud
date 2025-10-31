@@ -20,6 +20,6 @@ In the implementation of IBM&reg; Power&reg; Access Cloud, several key component
 
 ## Architecture
 
-![image](https://github.com/PDeXchange/.github/assets/12646029/477084d5-2411-40b9-b721-e47cf14c9c29)
+![image](https://github.ibm.com/pac/power-access-cloud/assets/512917/3d49f177-503f-42cb-8bb0-2455cded7370)
 
 Please refer to: [devguide](internal/README.md) for creating setup locally.

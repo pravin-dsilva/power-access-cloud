@@ -9,8 +9,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.uber.org/zap"
 
-	log "github.com/PDeXchange/pac/internal/pkg/pac-go-server/logger"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
+	log "github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/logger"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
 )
 
 // GetTermsAndConditionsByUserID gets the terms and conditions status for a user.

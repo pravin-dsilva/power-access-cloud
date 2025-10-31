@@ -8,11 +8,11 @@ import (
 	"testing"
 
 	"github.com/Nerzal/gocloak/v13"
-	pac "github.com/PDeXchange/pac/apis/app/v1alpha1"
-	"github.com/PDeXchange/pac/internal/pkg/pac-go-server/models"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
+	pac "github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
+	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
 )
 
 func TestGetAllRequest(t *testing.T) {

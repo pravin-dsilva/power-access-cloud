@@ -26,7 +26,7 @@ export const tncStatus = () => {
 
 export const getTnCText = () => {
   const url =
-    "https://raw.githubusercontent.com/PDeXchange/pac-support/refs/heads/main/Terms%20and%20Conditions.md";
+    "https://github.ibm.com/pac/power-access-cloud/blob/main/support/Terms%20and%20Conditions.md";
   return axios
     .get(url)
     .then((response) => ({
