@@ -1,4 +1,4 @@
-name: Docker
+name: Docker Keyloak
 
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
@@ -17,7 +17,7 @@ on:
 
 env:
   # Use docker.io for Docker Hub if empty
-  REGISTRY: ghcr.io
+  REGISTRY: icr.io
   # github.repository as <account>/<repo>
   IMAGE_NAME: ${{ github.repository_owner }}/keycloak
 
@@ -48,11 +48,11 @@ jobs:
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ secrets.ICR_USERNAME }}
+          password: ${{ secrets.ICR_APIKEY }}
 
       - name: Set variables
-        working-directory: ./keycloak
+        working-directory: ./keycloak-infra/keycloak
         run: |
           KEYCLOAK_VERSION=$(cat KEYCLOAK_VERSION)
           echo "KEYCLOAK_VERSION=$KEYCLOAK_VERSION" >> $GITHUB_ENV
@@ -74,7 +74,7 @@ jobs:
       - name: Populate the theme content
         id: theme
         run: |
-          cd keycloak
+          cd ./keycloak-infra/keycloak
           make sync-theme
 
 #      - run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
@@ -85,8 +85,8 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
         with:
-          context: ./keycloak
-          dockerfile: ./keycloak/Dockerfile
+          context: ./keycloak-infra/keycloak
+          dockerfile: ./keycloak-infra/keycloak/Dockerfile
           build-args: KEYCLOAK_BASE_IMAGE=quay.io/keycloak/keycloak:${{ env.KEYCLOAK_VERSION }}
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}

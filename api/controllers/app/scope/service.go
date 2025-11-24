@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
+	"github.com/IBM/power-access-cloud/api/apis/app/v1alpha1"
 	"github.com/pkg/errors"
-	"github.ibm.com/pac/power-access-cloud/api/apis/app/v1alpha1"
 	"sigs.k8s.io/cluster-api/util/patch"
 )
 

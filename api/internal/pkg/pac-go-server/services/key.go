@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/IBM/power-access-cloud/api/internal/pkg/pac-go-server/client"
+	"github.com/IBM/power-access-cloud/api/internal/pkg/pac-go-server/models"
+	"github.com/IBM/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 	"github.com/gin-gonic/gin"
-	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/client"
-	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
-	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/utils"
 	"golang.org/x/crypto/ssh"
 )
 

@@ -20,6 +20,10 @@ jobs:
     needs: call-fetch-go-version
     timeout-minutes: 15
 
+    defaults:
+      run:
+        working-directory: ./api
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -47,5 +51,5 @@ jobs:
         with:
           name: coverage-reports
           path: |
-            out/coverage.out
-            out/coverage.html
+             api/out/coverage.out
+             api/out/coverage.html
