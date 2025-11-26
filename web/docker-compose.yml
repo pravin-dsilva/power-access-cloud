@@ -62,7 +62,7 @@ services:
       DB_NAME: ${POSTGRES_DB}
       KEYCLOAK_CLIENT_ID: "pac-go-server"
       # Change the token secret to the one got created from the keycloak admin console
-      KEYCLOAK_CLIENT_SECRET: "SbTbRsRbcsGgoC9JjZuRqDJpk9rBvrDB"
+      KEYCLOAK_CLIENT_SECRET: "keycloak-client-secret"
       KEYCLOAK_REALM: "pac"
       # Production keycloak server
       # KEYCLOAK_HOSTNAME: "https://keycloak.developonpower.com"

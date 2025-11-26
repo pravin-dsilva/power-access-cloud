@@ -6,11 +6,11 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/IBM/power-access-cloud/api/internal/pkg/pac-go-server/models"
 	"github.com/Nerzal/gocloak/v13"
 	"github.com/gin-gonic/gin"
 	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
-	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/pac-go-server/models"
 )
 
 func TestGetAllGroups(t *testing.T) {

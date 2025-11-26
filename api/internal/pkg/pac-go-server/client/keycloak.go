@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
+	"github.com/IBM/power-access-cloud/api/internal/pkg/client/keycloak"
 	"github.com/Nerzal/gocloak/v13"
-	"github.ibm.com/pac/power-access-cloud/api/internal/pkg/client/keycloak"
 )
 
 var (

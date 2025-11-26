@@ -2,8 +2,9 @@ package iam
 
 import (
 	"fmt"
-	"github.com/IBM/go-sdk-core/v5/core"
 	"os"
+
+	"github.com/IBM/go-sdk-core/v5/core"
 )
 
 // GetIAMAuth returns the IAM authenticator
